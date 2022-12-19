@@ -1,0 +1,89 @@
+Print the following pattern for the given number of rows.
+Pattern for N = 5
+E
+DE
+CDE
+BCDE
+ABCDE
+Input format :
+N (Total no. of rows)
+Output format :
+Pattern in N lines
+Constraints
+0 <= N <= 26
+Sample Input 1:
+8
+Sample Output 1:
+H
+GH
+FGH
+EFGH
+DEFGH
+CDEFGH
+BCDEFGH
+ABCDEFGH
+Sample Input 2:
+7
+Sample Output 2:
+G
+FG
+EFG
+DEFG
+CDEFG
+BCDEFG
+ABCDEFG
+
+=======================================================================HERE IS YOUR CODE===============================================================================
+
+import java.util.Scanner;
+public class Solution {
+	public static void main(String[] args) {
+		//Your code goes here
+        Scanner sc = new Scanner(System.in);
+		int i=1;
+		int n = sc.nextInt();
+		
+		
+		while(i<=n) {
+			char ch   = (char) ('A' + n - i);
+			int j=1;
+			while(j<=i) {
+				
+			
+				System.out.print(ch);
+				j++;
+				ch = (char) (ch+1);
+				
+			}
+			System.out.println();
+			i++;
+		}
+		
+	}
+}
+
+
+==============================================================USING FOR LOOP =========================================================================================
+package PatternPractise;
+
+import java.util.Scanner;
+
+public class TringularStarPattern {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+			for(int i =0; i<num; i++) {
+				for(int j=0; j<=i; j++) {
+					int nm = 65+num-i;
+					char ch = (char) nm;
+					System.out.print(ch);
+				}
+				System.out.println();
+			}
+		
+
+	}
+
+}
