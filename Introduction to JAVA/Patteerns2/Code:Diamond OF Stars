@@ -1,0 +1,127 @@
+Print the following pattern for the given number of rows.
+Note: N is always odd.
+
+
+Pattern for N = 5
+
+..*
+.***
+*****
+.***
+..*
+
+
+The dots represent spaces.
+
+
+
+Input format :
+N (Total no. of rows and can only be odd)
+Output format :
+Pattern in N lines
+Constraints :
+1 <= N <= 49
+Sample Input 1:
+5
+Sample Output 1:
+  *
+ ***
+*****
+ ***
+  *
+Sample Input 2:
+3
+Sample Output 2:
+  *
+ ***
+  *
+  
+  =================================================================HERE IS YOUR CODE First Method +=====================================================================================
+  import java.util.Scanner;
+public class Solution {
+    
+    public static void main(String[] args) {
+        // Write your code here
+        Scanner sc=new Scanner(System.in);
+	      int n = sc.nextInt();
+	      int num=(n/2)+1;
+	    int count = num - 1;
+	    for(int i = 1; i <= num; i++) {
+	        for(int j = 1; j <= count; j++) {
+	          System.out.print(" ");
+	        }
+
+	        count--;
+
+	        for(int k = 1; k <= (2 * i) - 1; k++) {
+	          System.out.print("*");
+	        }
+
+	        System.out.println("");
+	    }
+	    count = 1;
+
+	    for(int i = 1; i <= (num - 1); i++) {
+	      for(int j = 1; j <= count; j++) {
+	        System.out.print(" ");
+	      }
+
+	      count++;
+
+	      for(int k = 1; k <= (2 * (num - i)) - 1; k++) {
+	        System.out.print("*");
+	      }
+
+	      System.out.println("");
+	    }
+        
+    }
+}
+
+==========================================================ANOTHER METHOD===============================================================================================
+
+package PatternPractise;
+
+import java.util.Scanner;
+
+public class DiamondStarPattern {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();	
+		int n = num/2+1;
+		int count = n-1;
+		for(int i=1; i<=n; i++) {
+			for(int s =1; s<=count; s++) {
+				System.out.print(" ");
+			}
+			count--;
+			for(int j=1; j<=(2*i)-1; j++ ) {
+				System.out.print("*");
+			}
+			System.out.println();
+			
+			
+			
+			
+		}
+		
+		for(int r=1; r<=num/2; r++) {
+			
+			for(int k=1; k<=r; k++) {
+				System.out.print(" ");
+				
+			}
+			
+			for(int c=1; c<=num-(2*r); c++) {
+				System.out.print("*");
+			}
+			
+			System.out.println();
+		}
+				
+			}
+		
+	
+}
